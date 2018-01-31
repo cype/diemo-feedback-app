@@ -1,3 +1,87 @@
+<?php
+  $stationid = htmlspecialchars($_GET["stationid"]);
+
+  $PlugSmallPaddle = htmlspecialchars($_GET["PlugSmallPaddle"]);
+  $PlugLargePaddle = htmlspecialchars($_GET["PlugLargePaddle"]);
+  $PlugAVCON = htmlspecialchars($_GET["PlugAVCON"]);
+  $PlugTesla = htmlspecialchars($_GET["PlugTesla"]);
+  $PlugNema = htmlspecialchars($_GET["PlugNema"]);
+  $PlugTypeE = htmlspecialchars($_GET["PlugTypeE"]);
+  $PlugTypeF = htmlspecialchars($_GET["PlugTypeF"]);
+  $PlugTypeG = htmlspecialchars($_GET["PlugTypeG"]);
+  $PlugTypeJ = htmlspecialchars($_GET["PlugTypeJ"]);
+  $PlugType1 = htmlspecialchars($_GET["PlugType1"]);
+  $PlugType2Outlet = htmlspecialchars($_GET["PlugType2Outlet"]);
+  $PlugType2Connector = htmlspecialchars($_GET["PlugType2Connector"]);
+  $PlugType3 = htmlspecialchars($_GET["PlugType3"]);
+  $PlugIECSingle = htmlspecialchars($_GET["PlugIECSingle"]);
+  $PlugIECThree = htmlspecialchars($_GET["PlugIECThree"]);
+  $PlugCCS2 = htmlspecialchars($_GET["PlugCCS2"]);
+  $PlugCCS1 = htmlspecialchars($_GET["PlugCCS1"]);
+  $PlugCHAdeMO = htmlspecialchars($_GET["PlugCHAdeMO"]);
+  $PlugUnspecified = htmlspecialchars($_GET["PlugUnspecified"]);
+
+  $AuthenticationModeNFCClassic = htmlspecialchars($_GET["AuthenticationModeNFCClassic"]);
+  $AuthenticationModeNFCDESFire = htmlspecialchars($_GET["AuthenticationModeNFCDESFire"]);
+  $AuthenticationModePnC = htmlspecialchars($_GET["AuthenticationModePnC"]);
+  $AuthenticationModeRemote = htmlspecialchars($_GET["AuthenticationModeRemote"]);
+  $AuthenticationModeDirect = htmlspecialchars($_GET["AuthenticationModeDirect"]);
+
+  $AccessibilityPublic = htmlspecialchars($_GET["AccessibilityPublic"]);
+  $AccessibilityRestriced = htmlspecialchars($_GET["AccessibilityRestriced"]);
+  $AccessibilityPaying = htmlspecialchars($_GET["AccessibilityPaying"]);
+  $AccessibilityUnspecified = htmlspecialchars($_GET["AccessibilityUnspecified"]);
+
+  $AddressCity = htmlspecialchars($_GET["AddressCity"]);
+  $AddressPostalCode = htmlspecialchars($_GET["AddressPostalCode"]);
+  $AddressStreet = htmlspecialchars($_GET["AddressStreet"]);
+  $AddressHouseNum = htmlspecialchars($_GET["AddressHouseNum"]);
+  $AddressCountry = htmlspecialchars($_GET["AddressCountry"]);
+
+
+  $HotlinePhoneNum = htmlspecialchars($_GET["HotlinePhoneNum"]);
+  $IsOpen24Hours = htmlspecialchars($_GET["IsOpen24Hours"]);
+  $IsHubjectCompatible = htmlspecialchars($_GET["IsHubjectCompatible"]);
+  $DynamicInfoAvailable = htmlspecialchars($_GET["DynamicInfoAvailable"]);
+
+  $plug_string = "";
+  $auth_string = "";
+  $acc_string = "";
+
+  if($PlugSmallPaddle == "True") { $plug_string = $plug_string . "Small Paddle Inductive"; }
+  if($PlugLargePaddle == "True") { $plug_string = $plug_string . " / Large Paddle Inductive"; }
+  if($PlugAVCON == "True") { $plug_string = $plug_string . " / AVCON Connector"; }
+  if($PlugTesla == "True") { $plug_string = $plug_string . " / Tesla Connector"; }
+  if($PlugNema == "True") { $plug_string = $plug_string . " / NEMA 5-20"; }
+  if($PlugTypeE == "True") { $plug_string = $plug_string . " / Type E French Standard"; }
+  if($PlugTypeF == "True") { $plug_string = $plug_string . " / Type F Schuko"; }
+  if($PlugTypeG == "True") { $plug_string = $plug_string . " / Type G British Standard"; }
+  if($PlugTypeJ == "True") { $plug_string = $plug_string . " / Type J Swiss Standard"; }
+  if($PlugType1 == "True") { $plug_string = $plug_string . " / Type 1 Connector (Cable Attached)"; }
+  if($PlugType2Outlet == "True") { $plug_string = $plug_string . " / Type 2 Outlet"; }
+  if($PlugType2Connector == "True") { $plug_string = $plug_string . " / Type 2 Connector (Cable Attached)"; }
+  if($PlugType3 == "True") { $plug_string = $plug_string . " / Type 3 Outlet"; }
+  if($PlugIECSingle == "True") { $plug_string = $plug_string . " / IEC 60309 Single Phase"; }
+  if($PlugIECThree == "True") { $plug_string = $plug_string . " / IEC 60309 Three Phase"; }
+  if($PlugCCS2 == "True") { $plug_string = $plug_string . " / CCS Combo 2 Plug (Cable Attached)"; }
+  if($PlugCCS1 == "True") { $plug_string = $plug_string . " / CCS Combo 1 Plug (Cable Attached)"; }
+  if($PlugCHAdeMO == "True") { $plug_string = $plug_string . " / CHAdeMO"; }
+  if($PlugUnspecified == "True") { $plug_string = $plug_string . " / Unspecified"; }
+
+  if($AuthenticationModeNFCClassic == "True") { $auth_string = $auth_string . "NFC RFID Classic"; }
+  if($AuthenticationModeNFCDESFire == "True") { $auth_string = $auth_string . " / NFC RFID DESFire"; }
+  if($AuthenticationModePnC == "True") { $auth_string = $auth_string . " / PnC"; }
+  if($AuthenticationModeRemote == "True") { $auth_string = $auth_string . " / REMOTE"; }
+  if($AuthenticationModeDirect == "True") { $auth_string = $auth_string . " / Direct Payment"; }
+
+  if($AccessibilityPublic == "True") { $acc_string = $acc_string . " / Free publicly accessible"; }
+  if($AccessibilityRestriced == "True") { $acc_string = $acc_string . " / Restricted access"; }
+  if($AccessibilityPaying == "True") { $acc_string = $acc_string . " / Paying publicly accessible"; }
+  if($AccessibilityUnspecified == "True") { $acc_string = $acc_string . " / Paying publicly accessible"; }  
+
+?>
+
+
 <!DOCTYPE HTML>
 
 <html>
@@ -116,12 +200,29 @@
     <!-- Two: Map -->
       <section id="two" class="main style1 special" style="padding-top: 0px; padding-bottom: 0px;">
 
+        <!--
               <ul class="buttons vertical">
                 <a href="#main" class="button fit scrolly" onclick="getLocation()">Lokalisier mich!</a>
               </ul> 
-              <p>&nbsp;</p>     
+            
+              <p>&nbsp;</p>
+        -->
+          <p><strong>ID:</strong> <?php echo $stationid; ?></p>
+          <p><strong>Adresse:</strong> <?php echo $AddressStreet . " " . $AddressHouseNum . " " . $AddressPostalCode . " " . $AddressCity . " " . $AddressCountry; ?></p>
+          <p><strong>Plugs:</strong> <?php echo $plug_string; ?></p>
+          <p><strong>Authentication:</strong> <?php echo $auth_string; ?></p>
+          <p><strong>Accessibility:</strong> <?php echo $acc_string; ?></p>
 
+          <p><strong>HotlinePhoneNum:</strong> <?php echo $HotlinePhoneNum; ?></p>
+          <p><strong>IsOpen24Hours:</strong> <?php echo $IsOpen24Hours; ?></p>
+          <p><strong>IsHubjectCompatible:</strong> <?php echo $IsHubjectCompatible; ?></p>
+          <p><strong>DynamicInfoAvailable:</strong> <?php echo $DynamicInfoAvailable; ?></p>
+
+          <br>
+
+<!--
           <iframe id="mymap" src='https://mf-geoadmin3.int.bgdi.ch/teo_diemo/embed.html?lang=de&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,ch.bfe.ladestellen-elektromobilitaet&layers_visibility=false,false,false,false,true&layers_timestamp=18641231,,,,&E=2612957.94&N=1226989.91&zoom=1' width='100%' height='300' frameborder='0' style='border:0'></iframe>
+        -->
 
       </section>
 
@@ -131,11 +232,11 @@
           <div class="row 150%">
             <div class="12u 12u$(medium)">
               <div>
-                <strong><span class="trn">Station</span></strong>
-                <input type="text"></input><br>
-                <p>
+
+
+                <form action="save_feedback.php" method="POST">
                 <strong><span class="trn">Meldung</span></strong>
-                <select name="meldung">
+                <select name="reason">
                   <option>*** Bitte auswählen ***</option>
                   <option>Ortsangabe stimmt nicht</option>
                   <option>Steckerinformation stimmt nicht</option>
@@ -146,7 +247,12 @@
                 </select>
                 <p>
                 <strong><span class="trn">Bemerkung</span></strong>
-                <textarea type="text"></textarea><p>
+                <textarea name="comment" type="text"></textarea>
+                <p>
+                <input type="hidden" name="action" value="save">
+                <input type="hidden" name="stationid" value="<?php echo $stationid; ?>">
+                <input type="submit" value="Senden">
+                </form>
               </div>
             </div>
           </div>
@@ -163,17 +269,6 @@
     </section>
 
 		<!-- Scripts -->
-
-<?php
-
-$lang = 'de';
-if (isset($_GET['lang'])) {
-  $lang = $_GET['lang'];
-}
-
-echo '<script src="//api3.geo.admin.ch/loader.js?lang=' . $lang . '"></script>';
-
-?>
 
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/js/jquery.xdomainrequest.1.0.2.min.js"></script>
@@ -198,14 +293,6 @@ echo '<script src="//api3.geo.admin.ch/loader.js?lang=' . $lang . '"></script>';
       $(document).ready(function() {
         init(false);
       });
-
-      //var doResize = function(evt) {
-      //  init(false);
-      //};
-
-      //window.addEventListener('resize', doResize);
-
-      //document.getElementById("mymap").addEventListener('click', function(event) {console.log(this);}, false);
 
     </script>    
 
